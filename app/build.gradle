@@ -1,0 +1,40 @@
+/*
+ * Copyright (c) 2017. CMRI PRIVATE LIMITED. All rights reserved
+ * Created by WangBo on 17-6-23 上午11:44
+ *
+ * Last modified 17-6-23 上午11:38
+ */
+
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "cmri.com.androidgreendaoassetsdbexample"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+greendao {
+    schemaVersion 1
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+
+    compile 'org.greenrobot:greendao:3.2.2'
+}
